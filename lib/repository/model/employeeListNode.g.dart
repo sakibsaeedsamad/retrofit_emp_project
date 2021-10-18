@@ -29,7 +29,7 @@ Map<String, dynamic> _$EmployeesToJson(Employees instance) => <String, dynamic>{
     };
 
 ResponseData _$ResponseDataFromJson(Map<String, dynamic> json) => ResponseData(
-      employee_list_nodes: json['employee_list_nodes'] as List<dynamic>,
+      employee_list_nodes: json['employee_list_nodes'] as List<Employees>,
     );
 
 Map<String, dynamic> _$ResponseDataToJson(ResponseData instance) =>

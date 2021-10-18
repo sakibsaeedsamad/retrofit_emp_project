@@ -16,7 +16,7 @@ class Employees {
   Employees({
     required this.joiningDate,
     required this.mobile,
-    required  this.bloodGroup,
+    required this.bloodGroup,
     required this.employeeName,
     required this.designation,
     required this.email,
@@ -32,14 +32,10 @@ class Employees {
 
 @JsonSerializable()
 class ResponseData {
-
-
-  List<dynamic> employee_list_nodes;
-
-
+  List<Employees>  employee_list_nodes;
 
   ResponseData({
-    required  this.employee_list_nodes,
+    required this.employee_list_nodes,
   });
 
   factory ResponseData.fromJson(Map<String, dynamic> json) =>

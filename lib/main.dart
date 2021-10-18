@@ -49,14 +49,15 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   // build list view & manage states
-  FutureBuilder<ResponseData?> _buildBody(BuildContext context) {
-    final client = ApiClient(Dio(BaseOptions(contentType: "application/json")));
+  FutureBuilder<ResponseData> _buildBody(BuildContext context) {
+    final client = ApiClient(Dio(BaseOptions(contentType: "application/x-www-form-urlencoded")));
     return FutureBuilder<ResponseData>(
-      future: client.getEmp("1"),
+      future: client.getEmp('1'),
       builder: (context, snapshot) {
+        print("Data: ${snapshot.data}");
         if (snapshot.connectionState == ConnectionState.done) {
-          final ResponseData? posts = snapshot.data;
-          return _buildListView(context, posts!);
+          final ResponseData employee = snapshot.data!;
+          return _buildListView(context, employee);
         } else {
           return Center(
             child: CircularProgressIndicator(),
@@ -67,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   // build list view & its tile
-  Widget _buildListView(BuildContext context, ResponseData posts) {
+  Widget _buildListView(BuildContext context, ResponseData employee) {
     return ListView.builder(
       itemBuilder: (context, index) {
         return Card(
@@ -78,14 +79,14 @@ class _MyHomePageState extends State<MyHomePage> {
               size: 50,
             ),
             title: Text(
-              posts.employee_list_nodes[index]['name'],
+              employee.employee_list_nodes[index].employeeName,
               style: TextStyle(fontSize: 20),
             ),
-            subtitle: Text(posts.employee_list_nodes[index]['email']),
+            subtitle: Text(employee.employee_list_nodes[index].email),
           ),
         );
       },
-      itemCount: posts.employee_list_nodes.length,
+      itemCount: employee.employee_list_nodes.length,
     );
   }
 }
