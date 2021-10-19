@@ -1,5 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.retrofit_emp_project">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="retrofit_emp_project"
         android:icon="@mipmap/ic_launcher">

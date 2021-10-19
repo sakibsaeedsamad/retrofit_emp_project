@@ -4,24 +4,24 @@ part 'employeeListNode.g.dart';
 
 @JsonSerializable()
 class Employees {
-  String joiningDate;
+  String joining_date;
   String mobile;
-  String bloodGroup;
-  String employeeName;
+  String blood_group;
+  String employee_name;
   String designation;
   String email;
   String PYEMPSEX;
-  String employeeCode;
+  String employee_code;
 
   Employees({
-    required this.joiningDate,
+    required this.joining_date,
     required this.mobile,
-    required this.bloodGroup,
-    required this.employeeName,
+    required  this.blood_group,
+    required this.employee_name,
     required this.designation,
     required this.email,
     required this.PYEMPSEX,
-    required this.employeeCode,
+    required this.employee_code,
   });
 
   factory Employees.fromJson(Map<String, dynamic> json) =>
@@ -32,10 +32,14 @@ class Employees {
 
 @JsonSerializable()
 class ResponseData {
-  List<Employees>  employee_list_nodes;
+
+
+  List<dynamic> employee_list_nodes;
+
+
 
   ResponseData({
-    required this.employee_list_nodes,
+    required  this.employee_list_nodes,
   });
 
   factory ResponseData.fromJson(Map<String, dynamic> json) =>

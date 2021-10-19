@@ -7,29 +7,29 @@ part of 'employeeListNode.dart';
 // **************************************************************************
 
 Employees _$EmployeesFromJson(Map<String, dynamic> json) => Employees(
-      joiningDate: json['joiningDate'] as String,
+      joining_date: json['joining_date'] as String,
       mobile: json['mobile'] as String,
-      bloodGroup: json['bloodGroup'] as String,
-      employeeName: json['employeeName'] as String,
+      blood_group: json['blood_group'] as String,
+      employee_name: json['employee_name'] as String,
       designation: json['designation'] as String,
       email: json['email'] as String,
       PYEMPSEX: json['PYEMPSEX'] as String,
-      employeeCode: json['employeeCode'] as String,
+      employee_code: json['employee_code'] as String,
     );
 
 Map<String, dynamic> _$EmployeesToJson(Employees instance) => <String, dynamic>{
-      'joiningDate': instance.joiningDate,
+      'joining_date': instance.joining_date,
       'mobile': instance.mobile,
-      'bloodGroup': instance.bloodGroup,
-      'employeeName': instance.employeeName,
+      'blood_group': instance.blood_group,
+      'employee_name': instance.employee_name,
       'designation': instance.designation,
       'email': instance.email,
       'PYEMPSEX': instance.PYEMPSEX,
-      'employeeCode': instance.employeeCode,
+      'employee_code': instance.employee_code,
     };
 
 ResponseData _$ResponseDataFromJson(Map<String, dynamic> json) => ResponseData(
-      employee_list_nodes: json['employee_list_nodes'] as List<Employees>,
+      employee_list_nodes: json['employee_list_nodes'] as List<dynamic>,
     );
 
 Map<String, dynamic> _$ResponseDataToJson(ResponseData instance) =>

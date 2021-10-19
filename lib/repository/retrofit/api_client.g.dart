@@ -8,7 +8,7 @@ part of 'api_client.dart';
 
 class _ApiClient implements ApiClient {
   _ApiClient(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'http://202.40.190.117:8082/ERAHRMAPPS/EmployeeListS/';
+    baseUrl ??= 'http://10.11.201.180:8080/ERAHRMAPPS/';
   }
 
   final Dio _dio;
